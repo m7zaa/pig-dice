@@ -50,6 +50,7 @@ $(document).ready(function() {
       playerOne.subtotal = [];
       playerOne.subtotalSum = 0;
       $("#playerOneCurrentRoll").text("");
+      $("#playerOneSubtotal").text("");
     }
     else {
       playerOne.subtotal.push(rand);
@@ -69,7 +70,7 @@ $(document).ready(function() {
     $("#playerOneCurrentRoll").text("");
     $("#playerOneTotal").text(" " + playerOne.score);
     $("#playerOneSubtotal").text("");
-    if (playerOne.score >= 1) {
+    if (playerOne.score >= 100) {
       $(".ui").hide();
       $("#winner").text(playerOne.player + " ")
       $(".declareWinner").show();
@@ -88,6 +89,7 @@ $(document).ready(function() {
       playerTwo.subtotal = [];
       playerTwo.subtotalSum = 0;
       $("#playerTwoCurrentRoll").text("");
+      $("#playerTwoSubtotal").text("");
     }
     else {
       playerTwo.subtotal.push(rand);
@@ -107,7 +109,7 @@ $(document).ready(function() {
     $("#playerTwoCurrentRoll").text("");
     $("#playerTwoTotal").text(" " + playerTwo.score);
     $("#playerTwoSubtotal").text("");
-    if (playerTwo.score >= 1) {
+    if (playerTwo.score >= 100) {
       $(".ui").hide();
       $("#winner").text(playerTwo.player + " ")
       $(".declareWinner").show();
