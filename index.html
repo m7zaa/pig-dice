@@ -9,45 +9,52 @@
 </head>
 <body>
   <div class="container">
-    <h1>Pig Dice</h1>
-    <h2>How to Play:</h2>
-    <ul>
-      <li>If the player rolls a 1, they score nothing and it becomes the next player's turn.</li>
-      <li>If the player rolls any other number, it is added to their turn total and the player's turn continues.</li>
-      <li>If a player chooses to "hold", their turn total is added to their score, and it becomes the next player's turn.</li>
-      <li>First player to 100 or more points wins!</li>
-    </ul>
+    <div class="declareWinner">
+      <p><span id="winner"> </span>is the winner!</p>
+      <button type="click" id="playAgain" name="button">Play Again</button>
+    </div>
+    <div class="ui">
 
-    <button type="click" id="twoPlayerStart" name="button">Player vs Player</button>
-    <div class="row">
-      <div class="col-md-6">
-        <h3>Player 1</h3>
-        <p>Total:<span id="playerOneTotal"> </span></p>
-        <p>Subtotal:<span id="playerOneSubtotal"> </span></p>
-        <div class="player1">
+      <h1>Pig Dice</h1>
+      <h2>How to Play:</h2>
+      <ul>
+        <li>If the player rolls a 1, they score nothing and it becomes the next player's turn.</li>
+        <li>If the player rolls any other number, it is added to their turn total and the player's turn continues.</li>
+        <li>If a player chooses to "hold", their turn total is added to their score, and it becomes the next player's turn.</li>
+        <li>First player to 100 or more points wins!</li>
+      </ul>
 
-          <button type="click" id="playerOneRoll" name="button">Roll Dice</button>
-          <button type="click" id="playerOneHold" name="button">Hold</button>
+      <button type="click" id="twoPlayerStart" name="button">Player vs Player</button>
+      <div class="row">
+        <div class="col-md-6">
+          <h3>Player 1</h3>
+          <p>Total:<span id="playerOneTotal"> </span></p>
+          <p>Subtotal:<span id="playerOneSubtotal"> </span></p>
+          <div class="player1">
 
-          <ul id="playerOneCurrentRoll">
-          </ul>
+            <button type="click" id="playerOneRoll" name="button">Roll Dice</button>
+            <button type="click" id="playerOneHold" name="button">Hold</button>
+
+            <ul id="playerOneCurrentRoll">
+            </ul>
+          </div>
+          <p class="playerOneEndTurn">You rolled a '1'. Your turn is over.</p>
         </div>
-        <p class="playerOneEndTurn">You rolled a '1'. Your turn is over.</p>
-      </div>
-      <div class="col-md-6">
-        <h3>Player 2</h3>
-        <p>Total:<span id="playerTwoTotal"> </span></p>
-        <p>Subtotal:<span id="playerTwoSubtotal"> </span></p>
-        <div class="player2">
+        <div class="col-md-6">
+          <h3>Player 2</h3>
+          <p>Total:<span id="playerTwoTotal"> </span></p>
+          <p>Subtotal:<span id="playerTwoSubtotal"> </span></p>
+          <div class="player2">
 
-          <button type="click" id="playerTwoRoll" name="button">Roll Dice</button>
-          <button type="click" id="playerTwoHold" name="button">Hold</button>
+            <button type="click" id="playerTwoRoll" name="button">Roll Dice</button>
+            <button type="click" id="playerTwoHold" name="button">Hold</button>
 
-          <ul id="playerTwoCurrentRoll">
-          </ul>
+            <ul id="playerTwoCurrentRoll">
+            </ul>
 
+          </div>
+          <p class="playerTwoEndTurn">You rolled a '1'. Your turn is over.</p>
         </div>
-        <p class="playerTwoEndTurn">You rolled a '1'. Your turn is over.</p>
       </div>
     </div>
 

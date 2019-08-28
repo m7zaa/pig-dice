@@ -69,8 +69,10 @@ $(document).ready(function() {
     $("#playerOneCurrentRoll").text("");
     $("#playerOneTotal").text(" " + playerOne.score);
     $("#playerOneSubtotal").text("");
-    if (playerOne.score >= 100) {
-
+    if (playerOne.score >= 1) {
+      $(".ui").hide();
+      $("#winner").text(playerOne.player + " ")
+      $(".declareWinner").show();
     }
   });
 
@@ -105,5 +107,22 @@ $(document).ready(function() {
     $("#playerTwoCurrentRoll").text("");
     $("#playerTwoTotal").text(" " + playerTwo.score);
     $("#playerTwoSubtotal").text("");
+    if (playerTwo.score >= 1) {
+      $(".ui").hide();
+      $("#winner").text(playerTwo.player + " ")
+      $(".declareWinner").show();
+    }
+  });
+
+  // Play Again Button
+  $("#playAgain").click(function(event) {
+    $(".ui").show();
+    $(".declareWinner").hide();
+    $(".col-md-6").hide();
+    $("#twoPlayerStart").show();
+    $("#playerOneCurrentRoll").text("");
+    $("#playerTwoCurrentRoll").text("");
+    $("#playerOneTotal").text("")
+    $("#playerTwoTotal").text("")
   });
 });
