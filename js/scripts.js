@@ -58,6 +58,10 @@ $(document).ready(function() {
     playerOne.subtotal = [];
     playerOne.subtotalSum = 0;
     $("#playerOneCurrentRoll").text("");
+    $("#playerOneTotal").text(" " + playerOne.score);
+    if (playerOne.score >= 100) {
+      
+    }
   });
 
   // Player Two Roll Button
@@ -91,6 +95,6 @@ $(document).ready(function() {
     playerTwo.subtotal = [];
     playerTwo.subtotalSum = 0;
     $("#playerTwoCurrentRoll").text("");
-
+    $("#playerTwoTotal").text(" " + playerTwo.score);
   });
 });
