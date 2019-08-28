@@ -10,14 +10,11 @@ function Player (player, score) {
 }
 Player.prototype.rollTotal = function() {
   for (var i = 0; i < this.subtotal.length; i++) {
-    this.subtotalSum = this.subtotalSum + this.subtotal[i]
-    // var sum = 0;
-    // sum = sum + this.subtotal[i];
-    // this.score += sum;
-    // console.log(sum);
+    this.subtotalSum = this.subtotal[i]
+    this.score = this.score + this.subtotalSum
   }
+  return this.score
 }
-
 
 $(document).ready(function() {
   $("#twoPlayerStart").click(function(event) {
@@ -25,8 +22,6 @@ $(document).ready(function() {
     $(".player1").show();
     playerOne = new Player ("player one", 0);
     playerTwo = new Player ("player two", 0);
-    // console.log(playerOne);
-    // console.log(playerTwo);
   });
 
   $("#playerOneRoll").click(function(event) {
@@ -34,16 +29,22 @@ $(document).ready(function() {
     if (rand === 1) {
         $(".player1").hide();
         $(".player2").show();
+        playerOne.subtotal = [];
+        playerOne.subtotalSum = 0;
        }
        else {
          playerOne.subtotal.push(rand);
-         console.log(playerOne.subtotal + 'is the subtotal of player one');
        }
+      console.log(playerOne.subtotal);
      });
 
   $("#playerOneHold").click(function(event) {
+    $(".player1").hide();
+    $(".player2").show();
     playerOne.score = playerOne.rollTotal();
-    console.log(playerOne.subtotalSum);
+    console.log(playerOne);
+    playerOne.subtotal = [];
+    playerOne.subtotalSum = 0;
   });
 
   $("#playerTwoRoll").click(function(event) {
@@ -56,7 +57,6 @@ $(document).ready(function() {
           else {
             playerTwo.subtotal.push(rand);
           }
-       // console.log(playerTwo);
      })
 
      $("#playerTwoHold").click(function(event) {
