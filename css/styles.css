@@ -13,3 +13,7 @@
 .playerTwoEndTurn {
   display: none;
 }
+
+.col-md-6 {
+  display: none;
+}

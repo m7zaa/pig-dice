@@ -1,6 +1,4 @@
-
-var playerOne;
-var playerTwo;
+//Business logic ---------------------------------------------
 
 // Player Constructor
 function Player (player, score) {
@@ -10,19 +8,31 @@ function Player (player, score) {
   this.score = score
 }
 
-// Player prototype
+// Player total prototype
 Player.prototype.rollTotal = function() {
-  for (var i = 0; i < this.subtotal.length; i++) {
+    for (var i = 0; i < this.subtotal.length; i++) {
     this.subtotalSum = this.subtotal[i]
     this.score = this.score + this.subtotalSum
   }
   return this.score
 }
 
-// Player v Player Start Button
+// Player subtotal prototype
+Player.prototype.rollSubtotal = function() {
+  this.subtotalSum = 0;
+  for (var i = 0; i < this.subtotal.length; i++) {
+    this.subtotalSum += this.subtotal[i];
+  }
+  return this.subtotalSum;
+}
+
+// UI logic -------------------------------------------------
 $(document).ready(function() {
+
+  // Player v Player Start Button
   $("#twoPlayerStart").click(function(event) {
     event.preventDefault();
+    $(".col-md-6").show();
     $(".player1").show();
     $("#twoPlayerStart").hide();
     playerOne = new Player ("player one", 0);
@@ -40,13 +50,13 @@ $(document).ready(function() {
       playerOne.subtotal = [];
       playerOne.subtotalSum = 0;
       $("#playerOneCurrentRoll").text("");
-
     }
     else {
       playerOne.subtotal.push(rand);
       $("#playerOneCurrentRoll").append("<li>" + rand + "</li>");
+      playerOne.rollSubtotal();
+      $("#playerOneSubtotal").text(playerOne.subtotalSum);
     }
-    console.log(playerOne.subtotal);
   });
 
   // Player One Hold Button
@@ -54,13 +64,13 @@ $(document).ready(function() {
     $(".player1").hide();
     $(".player2").show();
     playerOne.score = playerOne.rollTotal();
-    console.log(playerOne.score);
     playerOne.subtotal = [];
     playerOne.subtotalSum = 0;
     $("#playerOneCurrentRoll").text("");
     $("#playerOneTotal").text(" " + playerOne.score);
+    $("#playerOneSubtotal").text("");
     if (playerOne.score >= 100) {
-      
+
     }
   });
 
@@ -76,14 +86,13 @@ $(document).ready(function() {
       playerTwo.subtotal = [];
       playerTwo.subtotalSum = 0;
       $("#playerTwoCurrentRoll").text("");
-
     }
     else {
       playerTwo.subtotal.push(rand);
       $("#playerTwoCurrentRoll").append("<li>" + rand + "</li>");
-
+      playerTwo.rollSubtotal();
+      $("#playerTwoSubtotal").text(playerTwo.subtotalSum);
     }
-    console.log(playerTwo.subtotal)
   })
 
   // Player Two Hold Button
@@ -91,10 +100,10 @@ $(document).ready(function() {
     $(".player2").hide();
     $(".player1").show();
     playerTwo.score = playerTwo.rollTotal();
-    console.log(playerTwo.score);
     playerTwo.subtotal = [];
     playerTwo.subtotalSum = 0;
     $("#playerTwoCurrentRoll").text("");
     $("#playerTwoTotal").text(" " + playerTwo.score);
+    $("#playerTwoSubtotal").text("");
   });
 });
