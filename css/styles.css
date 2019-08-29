@@ -23,14 +23,13 @@
   font-weight: bold;
 }
 
-.declareWinner {
-  display: none;
-}
 
 .jumbotron {
   padding-left: 45px;
   padding-right: 45px;
   font-family: 'Permanent Marker', cursive;
+  background-color: #FF9983 ;
+  margin-top: 30px;
 }
 
 h1 {
@@ -45,8 +44,25 @@ h3 {
 }
 .card-body {
   height: 600px;
+  background-color: #DAECF7;
 }
-#twoPlayerStart {
+.declareWinner {
+  display: none;
+  font-family: 'Permanent Marker', cursive;
+  background-color: #8AF7A1;
+  padding-left: 45px;
+  padding-right: 45px;
+  font-size: 80px;
+  text-align: center;
+  padding: 30px;
+  margin-top: 30px;
+}
+
+#final-score {
+    font-size: 30px;
+}
+
+#twoPlayerStart, #playerVsComputerStart {
   margin-left: 30px;
   margin-top: 20px;
 }
@@ -73,4 +89,13 @@ h3 {
 
 .playerOneDieImg, .playerTwoDieImg {
   margin-top: 40px;
+}
+#smallOneDie {
+  height: 25px;
+  /* border: solid 1px black;
+  border-radius: 7px; */
+}
+
+#playAgain {
+  font-size: 20px;
 }

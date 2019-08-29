@@ -28,16 +28,30 @@ Player.prototype.rollSubtotal = function() {
 
 // UI logic -------------------------------------------------
 $(document).ready(function() {
-
   // Player v Player Start Button
   $("#twoPlayerStart").click(function(event) {
     event.preventDefault();
     $(".col-md-6").show();
     $(".player1").show();
     $("#twoPlayerStart").hide();
+    $("#playerVsComputerStart").hide();
+    $("#computerCard").hide();
     playerOne = new Player ("player one", 0);
     playerTwo = new Player ("player two", 0);
   });
+
+  $("#playerVsComputerStart").click(function(event) {
+    event.preventDefault();
+    $(".col-md-6").show();
+    $("#playerTwoCard").hide();
+    $("#computerCard").show();
+    $(".player1").show();
+    $("#twoPlayerStart").hide();
+    $("#playerVsComputerStart").hide();
+    playerOne = new Player ("player one", 0);
+    computer = new Player ("computer", 0);
+  });
+
 
   // Player One Roll Button
   $("#playerOneRoll").click(function(event) {
@@ -99,6 +113,8 @@ $(document).ready(function() {
       $(".ui").hide();
       $("#winner").text(playerOne.player + " ")
       $(".declareWinner").show();
+      $("#winning-score").text(playerOne.score + " ");
+      $("#losing-score").text(playerTwo.score + " ");
     }
   });
 
@@ -163,6 +179,8 @@ $(document).ready(function() {
       $(".ui").hide();
       $("#winner").text(playerTwo.player + " ")
       $(".declareWinner").show();
+      $("#winning-score").text(playerTwo.score + " ");
+      $("#losing-score").text(playerOne.score + " ");
     }
   });
 
