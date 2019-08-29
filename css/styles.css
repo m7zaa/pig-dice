@@ -14,6 +14,9 @@
   display: none;
 }
 
+.computerEndTurn {
+  display: none;
+}
 .col-md-6 {
   display: none;
   text-align: center;
@@ -67,7 +70,7 @@ h3 {
   margin-top: 20px;
 }
 
-.playerOneEndTurn, .playerTwoEndTurn {
+.playerOneEndTurn, .playerTwoEndTurn, .computerEndTurn {
   color: red;
   font-family: 'Permanent Marker', cursive;
   font-size: 30px;
@@ -83,11 +86,11 @@ h3 {
   text-align: center;
 }
 
-#p1-die-1, #p1-die-2, #p1-die-3, #p1-die-4, #p1-die-5, #p1-die-6, #p2-die-1, #p2-die-2, #p2-die-3, #p2-die-4, #p2-die-5, #p2-die-6  {
+#p1-die-1, #p1-die-2, #p1-die-3, #p1-die-4, #p1-die-5, #p1-die-6, #p2-die-1, #p2-die-2, #p2-die-3, #p2-die-4, #p2-die-5, #p2-die-6, #computer-die-2, #computer-die-1, #computer-die-3, #computer-die-4, #computer-die-5, #computer-die-6  {
   display: none;
 }
 
-.playerOneDieImg, .playerTwoDieImg {
+.playerOneDieImg, .playerTwoDieImg, .computerDieImg {
   margin-top: 40px;
 }
 #smallOneDie {

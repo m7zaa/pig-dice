@@ -26,6 +26,48 @@ Player.prototype.rollSubtotal = function() {
   return this.subtotalSum;
 }
 
+// Computer logic
+Player.prototype.computerTurn = function() {
+  $(".player1").hide();
+  $(".computer").show();
+  $(".playerOneEndTurn").hide();
+  $("#computer-die-2").hide();
+  $("#computer-die-3").hide();
+  $("#computer-die-4").hide();
+  $("#computer-die-5").hide();
+  $("#computer-die-6").hide();
+  $("#playerOneSubtotal").text("");
+  var rand =  1 + Math.floor(Math.random() * 6);
+    if (rand === 1) {
+      $(".computerEndTurn").show();
+      computer.subtotal = [];
+      computer.subtotal = 0;
+      $("#computerSubtotal").text("");
+      $(".player1").show();
+    } else {
+      $("#p1-die-1").hide();
+      $("#p1-die-2").hide();
+      $("#p1-die-3").hide();
+      $("#p1-die-4").hide();
+      $("#p1-die-5").hide();
+      $("#p1-die-6").hide();
+      computer.subtotal.push(rand);
+      computer.rollSubtotal();
+      $("#computerSubtotal").text(" " + computer.subtotalSum);
+      if (rand === 2) {
+        $("#computer-die-2").fadeIn();
+      } else if (rand === 3){
+        $("#computer-die-3").fadeIn();
+      } else if (rand === 4) {
+        $("#computer-die-4").fadeIn();
+      } else if (rand === 5) {
+        $("#computer-die-5").fadeIn();
+      } else {
+        $("#computer-die-6").fadeIn();
+      }
+    }
+
+}
 // UI logic -------------------------------------------------
 $(document).ready(function() {
   // Player v Player Start Button
@@ -50,12 +92,14 @@ $(document).ready(function() {
     $("#playerVsComputerStart").hide();
     playerOne = new Player ("player one", 0);
     computer = new Player ("computer", 0);
+    computer.subtotal = [];
+    computer.subtotalSum = 0;
   });
-
 
   // Player One Roll Button
   $("#playerOneRoll").click(function(event) {
     $(".playerTwoEndTurn").hide();
+    $(".computerEndTurn").hide();
     var rand =  1 + Math.floor(Math.random() * 6);
     if (rand === 1) {
       $(".player1").hide();
@@ -69,6 +113,7 @@ $(document).ready(function() {
       playerOne.subtotal = [];
       playerOne.subtotalSum = 0;
       $("#playerOneSubtotal").text("");
+      computer.computerTurn();
     }
     else {
       $("#p1-die-1").hide();
