@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-
   <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
-  <link rel="stylesheet" href="css/styles.css" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" type="text/css">
   <script src="js/jquery-3.4.1.js"></script>
   <script src="js/scripts.js"></script>
-
   <title>Pig Dice</title>
 </head>
 <body>
@@ -32,6 +30,7 @@
 
       <div class="row">
         <div class="col-md-6">
+          <div class="leftColumn">
           <h3>Player 1</h3>
           <p>Total:<span id="playerOneTotal"> </span></p>
           <p>Subtotal:<span id="playerOneSubtotal"> </span></p>
@@ -40,11 +39,21 @@
             <button type="click" class="btn btn-light" id="playerOneRoll" name="button">Roll Dice</button>
             <button type="click" class="btn btn-light" id="playerOneHold" name="button">Hold</button>
 
-            <ul id="playerOneCurrentRoll">
-            </ul>
+            <!-- <ul id="playerOneCurrentRoll">
+            </ul> -->
+            <div class="playerOneDieImg">
+              <img src="img/die-2.png" alt="Two die" id="p1-die-2">
+              <img src="img/die-3.png" alt="Three die" id="p1-die-3">
+              <img src="img/die-4.png" alt="Four die" id="p1-die-4">
+              <img src="img/die-5.png" alt="Five die" id="p1-die-5">
+              <img src="img/die-6.png" alt="Six die" id="p1-die-6">
+            </div>
+
           </div>
           <p class="playerOneEndTurn">You rolled a '1'. Your turn is over.</p>
+          </div>
         </div>
+
         <div class="col-md-6">
           <h3>Player 2</h3>
           <p>Total:<span id="playerTwoTotal"> </span></p>
@@ -54,9 +63,16 @@
             <button type="click" class="btn btn-light" id="playerTwoRoll" name="button">Roll Dice</button>
             <button type="click" class="btn btn-light" id="playerTwoHold" name="button">Hold</button>
 
-            <ul id="playerTwoCurrentRoll">
-            </ul>
+            <!-- <ul id="playerTwoCurrentRoll">
+            </ul> -->
 
+            <div class="playerTwoDieImg">
+              <img src="img/die-2.png" alt="Two die" id="p2-die-2">
+              <img src="img/die-3.png" alt="Three die" id="p2-die-3">
+              <img src="img/die-4.png" alt="Four die" id="p2-die-4">
+              <img src="img/die-5.png" alt="Five die" id="p2-die-5">
+              <img src="img/die-6.png" alt="Six die" id="p2-die-6">
+            </div>
           </div>
           <p class="playerTwoEndTurn">You rolled a '1'. Your turn is over.</p>
         </div>

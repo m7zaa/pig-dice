@@ -53,10 +53,27 @@ $(document).ready(function() {
       $("#playerOneSubtotal").text("");
     }
     else {
+      $("#p1-die-1").hide();
+      $("#p1-die-2").hide();
+      $("#p1-die-3").hide();
+      $("#p1-die-4").hide();
+      $("#p1-die-5").hide();
+      $("#p1-die-6").hide();
       playerOne.subtotal.push(rand);
       $("#playerOneCurrentRoll").append("<li>" + rand + "</li>");
       playerOne.rollSubtotal();
       $("#playerOneSubtotal").text(" " + playerOne.subtotalSum);
+      if (rand === 2) {
+        $("#p1-die-2").fadeIn();
+      } else if (rand === 3){
+        $("#p1-die-3").fadeIn();
+      } else if (rand === 4) {
+        $("#p1-die-4").fadeIn();
+      } else if (rand === 5) {
+        $("#p1-die-5").fadeIn();
+      } else {
+        $("#p1-die-6").fadeIn();
+      }
     }
   });
 
@@ -67,6 +84,12 @@ $(document).ready(function() {
     playerOne.score = playerOne.rollTotal();
     playerOne.subtotal = [];
     playerOne.subtotalSum = 0;
+    $("#p1-die-1").hide();
+    $("#p1-die-2").hide();
+    $("#p1-die-3").hide();
+    $("#p1-die-4").hide();
+    $("#p1-die-5").hide();
+    $("#p1-die-6").hide();
     $("#playerOneCurrentRoll").text("");
     $("#playerOneTotal").text(" " + playerOne.score);
     $("#playerOneSubtotal").text("");
@@ -92,12 +115,29 @@ $(document).ready(function() {
       $("#playerTwoSubtotal").text("");
     }
     else {
+      $("#p2-die-1").hide();
+      $("#p2-die-2").hide();
+      $("#p2-die-3").hide();
+      $("#p2-die-4").hide();
+      $("#p2-die-5").hide();
+      $("#p2-die-6").hide();
       playerTwo.subtotal.push(rand);
       $("#playerTwoCurrentRoll").append("<li>" + rand + "</li>");
       playerTwo.rollSubtotal();
       $("#playerTwoSubtotal").text(" " + playerTwo.subtotalSum);
+      if (rand === 2) {
+        $("#p2-die-2").fadeIn();
+      } else if (rand === 3){
+        $("#p2-die-3").fadeIn();
+      } else if (rand === 4) {
+        $("#p2-die-4").fadeIn();
+      } else if (rand === 5) {
+        $("#p2-die-5").fadeIn();
+      } else {
+        $("#p2-die-6").fadeIn();
+      }
     }
-  })
+  });
 
   // Player Two Hold Button
   $("#playerTwoHold").click(function(event) {
@@ -106,6 +146,12 @@ $(document).ready(function() {
     playerTwo.score = playerTwo.rollTotal();
     playerTwo.subtotal = [];
     playerTwo.subtotalSum = 0;
+    $("#p2-die-1").hide();
+    $("#p2-die-2").hide();
+    $("#p2-die-3").hide();
+    $("#p2-die-4").hide();
+    $("#p2-die-5").hide();
+    $("#p2-die-6").hide();
     $("#playerTwoCurrentRoll").text("");
     $("#playerTwoTotal").text(" " + playerTwo.score);
     $("#playerTwoSubtotal").text("");

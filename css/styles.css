@@ -16,12 +16,17 @@
 
 .col-md-6 {
   display: none;
+  text-align: center;
 }
 
 .col-md-6 p {
   font-weight: bold;
-  /* font-family: 'Permanent Marker', cursive; */
 }
+
+/* .leftColumn {
+  margin-left: 80px;
+} */
+
 .declareWinner {
   display: none;
 }
@@ -35,6 +40,7 @@
 h1 {
   text-align: center;
   margin-bottom: 20px;
+  font-size: 80px;
 }
 
 h3 {
@@ -46,10 +52,26 @@ h3 {
   margin-top: 20px;
 }
 
+.playerOneEndTurn, .playerTwoEndTurn {
+  color: red;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 30px;
+}
+
 #playerOneCurrentRoll {
   margin-top: 20px;
+  text-align: left;
 }
 
 #playerTwoCurrentRoll {
   margin-top: 20px;
+  text-align: center;
+}
+
+#p1-die-1, #p1-die-2, #p1-die-3, #p1-die-4, #p1-die-5, #p1-die-6, #p2-die-1, #p2-die-2, #p2-die-3, #p2-die-4, #p2-die-5, #p2-die-6  {
+  display: none;
+}
+
+.playerOneDieImg, .playerTwoDieImg {
+  margin-top: 30px;
 }
