@@ -47,9 +47,13 @@ $(document).ready(function() {
       $(".player1").hide();
       $(".player2").show();
       $(".playerOneEndTurn").show();
+      $("#p1-die-2").hide();
+      $("#p1-die-3").hide();
+      $("#p1-die-4").hide();
+      $("#p1-die-5").hide();
+      $("#p1-die-6").hide();
       playerOne.subtotal = [];
       playerOne.subtotalSum = 0;
-      $("#playerOneCurrentRoll").text("");
       $("#playerOneSubtotal").text("");
     }
     else {
@@ -60,7 +64,6 @@ $(document).ready(function() {
       $("#p1-die-5").hide();
       $("#p1-die-6").hide();
       playerOne.subtotal.push(rand);
-      $("#playerOneCurrentRoll").append("<li>" + rand + "</li>");
       playerOne.rollSubtotal();
       $("#playerOneSubtotal").text(" " + playerOne.subtotalSum);
       if (rand === 2) {
@@ -90,7 +93,6 @@ $(document).ready(function() {
     $("#p1-die-4").hide();
     $("#p1-die-5").hide();
     $("#p1-die-6").hide();
-    $("#playerOneCurrentRoll").text("");
     $("#playerOneTotal").text(" " + playerOne.score);
     $("#playerOneSubtotal").text("");
     if (playerOne.score >= 100) {
@@ -109,9 +111,13 @@ $(document).ready(function() {
       $(".player1").show();
       $(".player2").hide();
       $(".playerTwoEndTurn").show();
+      $("#p2-die-2").hide();
+      $("#p2-die-3").hide();
+      $("#p2-die-4").hide();
+      $("#p2-die-5").hide();
+      $("#p2-die-6").hide();
       playerTwo.subtotal = [];
       playerTwo.subtotalSum = 0;
-      $("#playerTwoCurrentRoll").text("");
       $("#playerTwoSubtotal").text("");
     }
     else {
@@ -122,7 +128,6 @@ $(document).ready(function() {
       $("#p2-die-5").hide();
       $("#p2-die-6").hide();
       playerTwo.subtotal.push(rand);
-      $("#playerTwoCurrentRoll").append("<li>" + rand + "</li>");
       playerTwo.rollSubtotal();
       $("#playerTwoSubtotal").text(" " + playerTwo.subtotalSum);
       if (rand === 2) {
@@ -152,7 +157,6 @@ $(document).ready(function() {
     $("#p2-die-4").hide();
     $("#p2-die-5").hide();
     $("#p2-die-6").hide();
-    $("#playerTwoCurrentRoll").text("");
     $("#playerTwoTotal").text(" " + playerTwo.score);
     $("#playerTwoSubtotal").text("");
     if (playerTwo.score >= 100) {
@@ -168,8 +172,7 @@ $(document).ready(function() {
     $(".declareWinner").hide();
     $(".col-md-6").hide();
     $("#twoPlayerStart").show();
-    $("#playerOneCurrentRoll").text("");
-    $("#playerTwoCurrentRoll").text("");
+
     $("#playerOneTotal").text("")
     $("#playerTwoTotal").text("")
   });

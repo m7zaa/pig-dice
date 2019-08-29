@@ -23,10 +23,6 @@
   font-weight: bold;
 }
 
-/* .leftColumn {
-  margin-left: 80px;
-} */
-
 .declareWinner {
   display: none;
 }
@@ -45,8 +41,11 @@ h1 {
 
 h3 {
   font-family: 'Permanent Marker', cursive;
+  margin-top: 20px;
 }
-
+.card-body {
+  height: 600px;
+}
 #twoPlayerStart {
   margin-left: 30px;
   margin-top: 20px;
@@ -73,5 +72,5 @@ h3 {
 }
 
 .playerOneDieImg, .playerTwoDieImg {
-  margin-top: 30px;
+  margin-top: 40px;
 }
