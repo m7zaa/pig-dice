@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+
   <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
   <link rel="stylesheet" href="css/styles.css" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
   <script src="js/jquery-3.4.1.js"></script>
   <script src="js/scripts.js"></script>
+
   <title>Pig Dice</title>
 </head>
 <body>
@@ -14,17 +17,19 @@
       <button type="click" id="playAgain" name="button">Play Again</button>
     </div>
     <div class="ui">
+      <div class="jumbotron">
 
       <h1>Pig Dice</h1>
       <h2>How to Play:</h2>
       <ul>
-        <li>If the player rolls a 1, they score nothing and it becomes the next player's turn.</li>
+        <li>If the player rolls a '1', they score nothing and it becomes the next player's turn.</li>
         <li>If the player rolls any other number, it is added to their turn total and the player's turn continues.</li>
         <li>If a player chooses to "hold", their turn total is added to their score, and it becomes the next player's turn.</li>
-        <li>First player to 100 or more points wins!</li>
+        <li>First player to '100' or more points wins!</li>
       </ul>
+      <button type="click" class="btn btn-light" id="twoPlayerStart" name="button">Player vs Player</button>
+    </div>
 
-      <button type="click" id="twoPlayerStart" name="button">Player vs Player</button>
       <div class="row">
         <div class="col-md-6">
           <h3>Player 1</h3>
@@ -32,8 +37,8 @@
           <p>Subtotal:<span id="playerOneSubtotal"> </span></p>
           <div class="player1">
 
-            <button type="click" id="playerOneRoll" name="button">Roll Dice</button>
-            <button type="click" id="playerOneHold" name="button">Hold</button>
+            <button type="click" class="btn btn-light" id="playerOneRoll" name="button">Roll Dice</button>
+            <button type="click" class="btn btn-light" id="playerOneHold" name="button">Hold</button>
 
             <ul id="playerOneCurrentRoll">
             </ul>
@@ -46,8 +51,8 @@
           <p>Subtotal:<span id="playerTwoSubtotal"> </span></p>
           <div class="player2">
 
-            <button type="click" id="playerTwoRoll" name="button">Roll Dice</button>
-            <button type="click" id="playerTwoHold" name="button">Hold</button>
+            <button type="click" class="btn btn-light" id="playerTwoRoll" name="button">Roll Dice</button>
+            <button type="click" class="btn btn-light" id="playerTwoHold" name="button">Hold</button>
 
             <ul id="playerTwoCurrentRoll">
             </ul>

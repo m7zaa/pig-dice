@@ -56,7 +56,7 @@ $(document).ready(function() {
       playerOne.subtotal.push(rand);
       $("#playerOneCurrentRoll").append("<li>" + rand + "</li>");
       playerOne.rollSubtotal();
-      $("#playerOneSubtotal").text(playerOne.subtotalSum);
+      $("#playerOneSubtotal").text(" " + playerOne.subtotalSum);
     }
   });
 
@@ -95,7 +95,7 @@ $(document).ready(function() {
       playerTwo.subtotal.push(rand);
       $("#playerTwoCurrentRoll").append("<li>" + rand + "</li>");
       playerTwo.rollSubtotal();
-      $("#playerTwoSubtotal").text(playerTwo.subtotalSum);
+      $("#playerTwoSubtotal").text(" " + playerTwo.subtotalSum);
     }
   })
 
